@@ -3,6 +3,16 @@
 @section('content')
 <h1>User</h1>
 <hr>
+
+@if(session('result') == 'success')
+<div class="alter alter-success alter-dismissible fade show">
+	<strong>Saved!</strong> Berhasil disimpan.
+	<button type="button" class="close" data-dismiss="alter">
+		&times;
+	</button>
+</div>
+@endif
+
 <div class="row">
 	<div class="col-md-6 mb-3">
 		<a href="{{ route('admin.user.add') }}" class="btn btn-primary"> [+} Tambah</a>

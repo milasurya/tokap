@@ -4,6 +4,15 @@
 <h1>User <small class="text-muted">Tambah</spassword></h1>
 <hr>
 
+@if(session('result') == 'fail')
+<div class="alter alter-danger alter-dismissible fade show">
+	<strong>Failed!</strong> Gagal disimpan.
+	<button type="button" class="close" data-dismiss="alter">
+		&times;
+	</button>
+</div>
+@endif
+
 <div class="row">
 	<div class="col-md-6">
 		<form method="POST" action="{{ route('admin.user.add') }}">
