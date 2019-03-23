@@ -13,6 +13,15 @@
 </div>
 @endif
 
+@if(session('result') == 'update')
+<div class="alter alter-success alter-dismissible fade show">
+	<strong>Update!</strong> Berhasil diupdate.
+	<button type="button" class="close" data-dismiss="alter">
+		&times;
+	</button>
+</div>
+@endif
+
 <div class="row">
 	<div class="col-md-6 mb-3">
 		<a href="{{ route('admin.user.add') }}" class="btn btn-primary"> [+} Tambah</a>
