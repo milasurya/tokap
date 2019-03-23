@@ -22,7 +22,7 @@
 		<form method="GET" action="{{ route('admin.user') }}"> 
 			<div class="input-group">
 				<input type="text" name="keyword"
-				value="{{ request('keywprd') }}"
+				value="{{ request('keyword') }}"
 				class="form-control">
 				<div class="input-group-append">
 					<button type="submit"
@@ -46,7 +46,8 @@
 		<td>{{ $dt->email }}</td>
 		<td>{{ $dt->akses }}</td>
 		<td>
-			<a href="#" class="btn btn-success btn-sm">
+			<a href="{{ route('admin.user.edit',['id'=>$dt->id]) }}"
+			 class="btn btn-success btn-sm">
 				<i class="fa fa-w fa-edit"></i>
 			</a>
 
