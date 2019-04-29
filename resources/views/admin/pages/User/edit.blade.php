@@ -18,75 +18,24 @@
 		<form method="POST" action="{{ route('admin.user.edit',['id'=>$rc->id]) }}">
 			{{ csrf_field() }}
 			<div class="card">
+
 				<div class="card-header">
-					<h5>Edit Data User</h5>
+					<h5>Ubah Data Kategori</h5>
 				</div><!--End Card Header-->
 			
 
 				<div class="card-body">
 					
 					<div class="form-group form-label-group">
-						<input type="text" name="name"
-						class="form-control {{ $errors->has('name')?'is-invalid':'' }}"
-						value="{{ old('name',$rc->name) }}"
-						id="iName" placeholder="Name" required>
-						<label for="iName">Name</label>
-						@if($errors->has('name'))
-						<div class="invalid-feedback">{{ $errors->first('name') }}</div>
+						<input type="text" name="kategori"
+						class="form-control {{ $errors->has('kategori')?'is-invalid':'' }}"
+						value="{{ old('kategori',$rc->kategori) }}"
+						id="iKategori" placeholder="Kategori" required>
+						<label for="iKategori">Kategori</label>
+						@if($errors->has('Kategori'))
+						<div class="invalid-feedback">{{ $errors->first('kategori') }}</div>
 						@endif 
 					</div><!--End Form Group-->
-
-					<div class="form-group form-label-group">
-						<input type="text" name="email"
-						class="form-control {{ $errors->has('email')?'is-invalid':'' }}"
-						value="{{ old('email',$rc->email) }}"
-						id="iEmail" placeholder="Email" required>
-						<label for="iEmail">Email</label>
-						@if($errors->has('email'))
-						<div class="invalid-feedback">{{ $errors->first('email') }}</div>
-						@endif 
-					</div><!--End Form Group-->
-
-					<div class="form-group form-label-group">
-						<input type="password" name="password"
-						class="form-control {{ $errors->has('password')?'is-invalid':'' }}"
-						id="iPassword" placeholder="Password">
-						<label for="iPassword">Password</label>
-						@if($errors->has('password'))
-						<div class="invalid-feedback">{{ $errors->first('password') }}</div>
-						@endif
-
-						<div class="form-text text-muted">
-							<small>Kosongkan Password apabila tidak diubah.</small>
-						</div>
-
-					</div><!--End Form Group-->
-
-					<div class="form-group form-label-group">
-						<input type="password" name="repassword"
-						class="form-control {{ $errors->has('repassword')?'is-invalid':'' }}"
-						id="iRepassword" placeholder="Re Password">
-						<label for="iRepassword">Re Password</label>
-						@if($errors->has('repassword'))
-						<div class="invalid-feedback">{{ $errors->first('repassword') }}</div>
-						@endif
-					</div><!--End Form Group-->
-
-					<div class="form-group form-label-group">
-						<?php 
-						$val = old('akses',$rc->akses);
-						 ?>
-						<select class="form-control {{ $errors->has('akses')?'is-invalid':'' }}"
-						name="akses">
-							<option value="" {{ $val==""?'selected':'' }}>Pilih Akses Sebagai :</option>
-							<option value="operator" {{ $val=="operator"?'selected':'' }}>Operator</option>
-							<option value="admin" {{ $val=="admin"?'selected':'' }}>Administrator</option>	
-						</select>
-						@if($errors->has('akses'))
-						<div class="invalid-feedback">{{ $erorrs->first('akses') }}</div>
-						@endif
-						<div><!--End Form Group-->
-
 				</div><!--End Card Body-->
 
 				<div class="card-footer">
